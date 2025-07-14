@@ -230,13 +230,13 @@ setup(
         "ipython>=5.1",
         "scikit_learn>=0.18",
         "matplotlib>=1.5",
-        "joblib==0.14.1",
+        "joblib", # Changed
         "memory_profiler>=0.41",
-        "munkres==1.0.12",
         "numexpr>=2.6",
         "psutil>=5.0",
         "sphinx_gallery>=0.1",
-        ],
+        "munkres", # Changed
+    ],
     zip_safe=False,
     ext_modules=make_extensions(),
     cmdclass={"build_ext":CustomizedBuildExt},

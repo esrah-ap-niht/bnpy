@@ -46,7 +46,7 @@ def readConfigFileIntoDict(confFile, targetSecName=None):
     --------
     dict : dictionary of key-values for each configuration options
     '''
-    config = configparser.SafeConfigParser()
+    config = configparser.ConfigParser()
     config.optionxform = str
     config.read(confFile)
     for secName in config.sections():
@@ -372,7 +372,7 @@ def autoconfigure():
     ''' Perform timing experiments on current hardware to assess which
          of various implementations is the fastest for each key routine
     '''
-    config = configparser.SafeConfigParser()
+    config = configparser.ConfigParser()
     config.optionxform = str
     config.read(cfgfilepath)
     methodNames = ['inplaceExpAndNormalizeRows', 'calcRlogR', 'calcRlogRdotv']

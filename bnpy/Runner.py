@@ -335,16 +335,16 @@ def getKwArgsForLoadData(ReqArgs, UnkArgs, KwArgs=dict()):
 
         dataArgNames = set()
         if hasattr(datamod, 'get_data'):
-            names, varargs, varkw, defaults = inspect.getargspec(datamod.get_data)
+            names, varargs, varkw, defaults, _, _, _ = inspect.getfullargspec(datamod.get_data)
             for name in names:
                 dataArgNames.add(name)
         if hasattr(datamod, 'get_iterator'):
-            names, varargs, varkw, defaults = inspect.getargspec(
-                datamod.get_iterator)
+            names, varargs, varkw, defaults, _, _, _ = inspect.getfullargspec(
+                datamod.to_iterator)
             for name in names:
                 dataArgNames.add(name)
         if hasattr(datamod, 'to_iterator'):
-            names, varargs, varkw, defaults = inspect.getargspec(
+            names, varargs, varkw, defaults, _, _, _ = inspect.getfullargspec(
                 datamod.to_iterator)
             for name in names:
                 dataArgNames.add(name)
